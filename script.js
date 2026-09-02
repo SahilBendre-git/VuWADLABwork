@@ -38,3 +38,68 @@ window.onload = function()
         `
     }
 }
+
+function filterProjects() {
+    const selectedType = document.getElementById('select-project-type').value;
+    const LabProjHolder = document.getElementById('projects-holder');
+    const classPracProjHolder = document.getElementById('class-projects-holder');
+
+    //Hide all
+    LabProjHolder.style.display = 'none';
+    classPracProjHolder.style.display = 'none';
+
+    if (selectedType === 'WADLP') {
+        LabProjHolder.style.display = 'block';
+    }
+    else if (selectedType === 'WADCP') {
+        classPracProjHolder.style.display = 'block';
+        renderClassProjects();
+    }
+    else {
+        alert('Please select a valid project type.');
+    }
+
+}   
+
+function renderClassProjects() {
+
+    //alert('Rendering Class Projects...');
+
+    const classPracProjHolder = document.getElementById('class-projects-holder');
+
+    let k = 0;
+    for(X in class_projects) k++; //Count no of registered projects
+
+    for(X in class_projects) {
+
+    classPracProjHolder.innerHTML += 
+    `
+        <div class="pcard" id="VU_WADLAB_${k}">
+                <i>
+                    ${class_projects[X].DOC} (Lec. Practical ${k--})
+                </i>
+                <h3 style="color: purple">
+                    ${class_projects[X].title}
+                </h3>
+
+                <hr>
+
+                <p>
+                    <b>Description:- </b>
+                    <i>
+                        ${class_projects[X].desc}
+                    </i>
+                </p>
+
+                <a href="${class_projects[X].path}" target="blank">
+                    <button class="open-button">Open Project</button>
+                </a>
+
+            </div>
+
+            <br><br>
+    `
+
+    }
+
+}

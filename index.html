@@ -25,6 +25,18 @@
             <h2>My Projects</h2>
         </center>
 
+        <select name="typeselector" id="select-project-type" onchange="filterProjects()">
+            <option value="WADLP">WAD Lab Practical</option>
+            <option value="WADCP">WAD Class Practical</option>
+        </select>
+
+        <div class="projects-holder" id="class-projects-holder" style="display: none;">
+
+            <br><br>
+
+
+        </div>
+
         <div class="projects-holder" id="projects-holder">
             
            <div class="pcard" style="display: none;">
@@ -47,6 +59,7 @@
                 <button class="open-button">Open Project</button>
 
             </div>
+
 
             <br><br>
 
@@ -77,5 +90,6 @@
 
 </body>
 <script src="projects.js"></script>
+<script src="class-projects.js"></script>
 <script src="script.js"></script>
 </html>
