@@ -39,7 +39,7 @@ window.onload = function()
     }
 }
 
-function filterProjects() {
+function filterProjects(exp) {
     const selectedType = document.getElementById('select-project-type').value;
     const LabProjHolder = document.getElementById('projects-holder');
     const classPracProjHolder = document.getElementById('class-projects-holder');
@@ -47,6 +47,20 @@ function filterProjects() {
     //Hide all
     LabProjHolder.style.display = 'none';
     classPracProjHolder.style.display = 'none';
+
+    switch(exp) {
+        case 'WADLP':
+            LabProjHolder.style.display = 'block';
+            break;
+        case 'WADCP':
+            classPracProjHolder.style.display = 'block';
+            renderClassProjects();
+            break;
+        default:
+            alert('Please select a valid project type.');
+    }
+
+    /*
 
     if (selectedType === 'WADLP') {
         LabProjHolder.style.display = 'block';
@@ -58,6 +72,7 @@ function filterProjects() {
     else {
         alert('Please select a valid project type.');
     }
+        */
 
 }   
 

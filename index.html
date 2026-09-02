@@ -25,7 +25,36 @@
             <h2>My Projects</h2>
         </center>
 
-        <select name="typeselector" id="select-project-type" onchange="filterProjects()">
+        <nav>
+            <button id="WLP" class="selected" onclick="change('WADLP')">
+                WAD Lab Practical
+            </button>
+            <button id="WCP" class="unselected" onclick="change('WADCP')">
+                WAD Class Practical
+            </button>
+        </nav>
+
+        <script>
+            function change(buttonId) {
+                const WLPButton = document.getElementById('WLP');
+                const WCPButton = document.getElementById('WCP');
+
+                if (buttonId === 'WADLP') {
+                    WLPButton.className = 'selected';
+                    WCPButton.className = 'unselected';
+                } else {
+                    WLPButton.className = 'unselected';
+                    WCPButton.className = 'selected';
+                }
+
+                filterProjects(buttonId);
+
+
+            }
+        </script>
+
+
+        <select style="display: none;" name="typeselector" id="select-project-type" onchange="filterProjects()">
             <option value="WADLP">WAD Lab Practical</option>
             <option value="WADCP">WAD Class Practical</option>
         </select>
