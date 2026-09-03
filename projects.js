@@ -16,6 +16,16 @@ const projects = {
 
     //Add new projects below here
 
+    Lab5: {
+        title: "WAD Lab 5 - Forms",
+        DOC: "03-09-2026",
+        desc: 
+        `
+            (i) Sample Question Maker Form (ii) Feedback Form
+        `,
+        path: "Lab Practicals/Lab 5/index.html"
+        },
+
     Four_windowed_webpage: {
         title: "Webpage Divided into four boxes",
         DOC: "27-08-2026",
