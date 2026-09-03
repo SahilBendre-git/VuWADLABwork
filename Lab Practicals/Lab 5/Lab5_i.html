@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		HTML Forms - Lab 5
+	</title>
+</head>
+<body>
+	<h1>
+		Create a Multiple Choice Question Form
+	</h1>
+	<form id="ExamForm">
+		<fieldset>
+			<legend>Question 1</legend>
+			
+			<label>Enter your name</label> <br>
+			<textarea placeholder="Enter your Question here"></textarea>
+			<br><br>
+
+			<label>Marks for this question</label>
+			<input type="number" min="0" max="10" step="1" name="">
+
+			<select id="maxMarks">
+				<option>Please Select Maximum Marks</option>
+			</select>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Options</legend>
+
+			<label>Option A</label>
+			<input type="text" name="">
+			<br><br>
+			<label>Option B</label>
+			<input type="text" name="">
+			<br><br>
+			<label>Option C</label>
+			<input type="text" name="">
+			<br><br>
+			<label>Option D</label>
+			<input type="text" name="">
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Correct Answer</legend>
+			<label>A</label>
+			<input type="radio" name="opSelector" value="A"><br><br>
+			<label>B</label>
+			<input type="radio" name="opSelector" value="B"><br><br>
+			<label>C</label>
+			<input type="radio" name="opSelector" value="C"><br><br>
+			<label>D</label>
+			<input type="radio" name="opSelector" value="D"><br><br>
+		</fieldset>
+
+		<fieldset>
+			<legend>Difficulty Level</legend>
+
+			<select>
+				<option>Easy</option>
+				<option>Medium</option>
+				<option>Spicy</option>
+			</select>
+
+		</fieldset>
+		<br><br>
+		<button type="Submit">Save Question</button>
+		<button type="reset">Clear Form</button>
+	</form>
+
+	<script>
+				window.onload = function() {
+				const selector = document.getElementById('maxMarks')
+				for(i = 1; i <= 10; i++) {
+					const newOp = document.createElement('option');
+					newOp.innerText = i;
+					newOp.value = i;
+					selector.appendChild(newOp);
+				}
+			}
+	</script>
+</body>
+</html>
