@@ -8,11 +8,18 @@ const class_projects = {
         DOC: "2023-09-15",
         title: "Class Practical 1",
         desc: "This is the first class practical project.",
-        path: "class-projects/"
+        path: "class-projects/WAD_LP4_Framesets/frameset.html"
     },
 
 
     */
+
+    WADCP4: {
+        DOC: "2026-09-09",
+        title: "Class Practical 4 - Framesets",
+        desc: "Framesets usage & Limitations",
+        path: "class-projects/WAD_LP4_Framesets/frameset.html"
+    },
 
     WADCP3: {
         DOC: "02-09-2026",
