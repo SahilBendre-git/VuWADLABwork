@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Club Registration Form
+	</title>
+</head>
+<body style="font-family: sans-serif; background-color: ghostwhite;">
+	<a href="../">Back to parent page</a>
+	<center>
+		<h2>
+			Club Registration Form
+		</h2>
+	</center>
+	<form id="reg_form">
+		<fieldset style="padding: 8px;">
+			<legend>Personal Details</legend>
+
+			<div class="rightelements">
+				<div class="inputframe">
+					📩 <input type="email" name="" placeholder="Enter your Email address">
+				</div>
+				<br>
+				<div class="inputframe">
+					📅 <input type="date" name="" placeholder="Enter your Date of Birth">
+				</div>
+			</div>
+
+			<div class="leftelements">
+				<div class="inputframe">
+					👤 <input type="text" name="" placeholder="Enter your Full Name">
+				</div>
+				<br>
+				<div class="inputframe">
+					📱 <input type="number" name="" placeholder="Enter your Phone number">
+				</div>
+				<br>
+				<div class="inputframe">
+					<label>Gender ➡️ </label>
+					<input type="radio" style="width: 10%;" name="Gender">Male
+					<input type="radio" style="width: 10%;" name="Gender">Female
+					<input type="radio" style="width: 10%;" name="Gender">Other
+				</div>
+			</div>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>Academic Details</legend>
+				<div class="rightelements">
+					<div class="inputframe">
+						<center>
+						<label>Year</label>&nbsp;&nbsp;&nbsp;
+						<select>
+							<option>Please select your Year</option>
+							<option>FY</option>
+							<option>SY</option>
+							<option>TY</option>
+							<option>LY</option>
+						</select>
+					</center>
+					</div>
+				</div>
+
+				<div class="leftelements">
+					<div class="inputframe">
+						<center>
+						<label>Department</label>&nbsp;&nbsp;&nbsp;
+						<select>
+							<option>Please select your department</option>
+							<option>Computer Science</option>
+							<option>AI & ML</option>
+							<option>AI & DS</option>
+							<option>Cybersecurity</option>
+						</select>
+					</center>
+					</div>
+				</div>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>Club Prefrences</legend>
+			<div class="rightelements">
+				<div class="inputframe">
+					<label>Select Club: </label>
+					<select>
+						<option>Select Club</option>
+						<option>Coding Club</option>
+						<option>Electronics Club</option>
+						<option>Arts Club</option>
+					</select>
+				</div>
+			</div>
+			<div class="leftelements">
+				<div class="inputframe">
+					<label>Areas of Interest (Choose all that apply)</label> <br>
+					<input type="checkbox" name="" style="width: 10%;">
+					<label>Event Management</label><br>
+					<input type="checkbox" name="" style="width: 10%;">
+					<label>Creative / Designing Work</label><br>
+					<input type="checkbox" name="" style="width: 10%;">
+					<label>Technical / Research & Planning</label><br>
+				</div>
+			</div>
+			<br><hr>
+			<label>Please tell us why do you want to join this club?</label><br><br>
+			<textarea style="width: 100%;" placeholder="Please enter your message here"></textarea>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>Documents Upload</legend>
+
+			<label>Please attach a passport size photo of yours.</label><br><br>
+			<input type="file" name="">
+
+		</fieldset><br>
+
+		<input type="checkbox" name="" style="width: 2%;">
+		<label>I agree to the <a href="">Terms & Conditions</a> of the club</label>
+		<br><br>
+		<button type="submit" class="submitbtn">Apply For Registration</button>
+		<button type="reset" class="resetbtn">Reset the form</button>
+
+
+	</form>
+	<style>
+		.resetbtn, .submitbtn{
+			border: none;
+			cursor: pointer;
+			width: 220px;
+			height: 40px;
+			transition: 500ms;
+			border-radius: 10px;
+		}
+		.resetbtn{
+			color: white;
+			background-color: blue;
+		}
+		.resetbtn:hover{
+			background-color: yellow;
+			color: black;
+		}
+		.submitbtn{
+			background-color: lime;
+			
+		}
+		.submitbtn:hover{
+			color: white;
+			background-color: green;
+			transition: 500ms;
+		}
+		.rightelements{
+			float: right;
+		}
+		.rightelements, .leftelements{
+			width: 45%;
+		}
+		fieldset{
+			border-radius: 10px;
+			border: 1px solid blue;
+		}
+		input{
+			border: none;
+			width: 90%;
+			background-color: transparent;
+		}
+		input:focus {
+			border: none;
+			outline: none;
+		}
+		.inputframe{
+			border: 1px solid blue;
+			padding: 8px;
+			border-radius: 5px;
+		}
+	</style>
+</body>
+</html>

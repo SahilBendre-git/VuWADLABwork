@@ -15,7 +15,16 @@ const projects = {
     */
 
     //Add new projects below here
-
+    Lab6: {
+        title: "WAD Lab 6 - Form styling",
+        DOC: "10-09-2026",
+        desc: 
+        `
+            Sample Club Registration form with styling.
+        `,
+        path: "Lab Practicals/Lab6.html"
+        },
+        
     Lab5: {
         title: "WAD Lab 5 - Forms",
         DOC: "03-09-2026",
