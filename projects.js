@@ -15,6 +15,15 @@ const projects = {
     */
 
     //Add new projects below here
+    Lab7: {
+        title: "WAD Lab 7 - Personal Portfolio Page",
+        DOC: "17-09-2026",
+        desc: 
+        `
+            Creating a personal portfolio webpage and styling it using internal & Inline css
+        `,
+        path: "Lab Practicals/Lab7.html"
+    },
     Lab6: {
         title: "WAD Lab 6 - Form styling",
         DOC: "10-09-2026",
