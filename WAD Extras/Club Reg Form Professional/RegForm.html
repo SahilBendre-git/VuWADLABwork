@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            if(screen.width < 780) {
+                document.write('This page cannot be viewed on such small screens. Sorry')
+            }
+        }
+    </script>
+    <header>
+        <nav class="widescr-navbar">
+            <div class="navigation-items">
+                <b>
+                    <a href="index.html" class="navigation-element">Home</a>
+                    &nbsp;&nbsp;
+                    <a href="index.html/#Club Reg Form" class="navigation-element">Registration Form</a>
+                    &nbsp;&nbsp;
+                    <a href="inbox.html" class="navigation-element">Registration Responses</a>
+                    &nbsp;&nbsp;
+                </b>
+            </div>
+        </nav>
+
+        <h2 class="web-title">
+            Club Registration - Sample Website
+        </h2>
+    </header>
+
+
+    <br>
+    
+        <div class="formholder" id="formholder">
+            <fieldset>
+                <h2>Club Registration Form</h2><hr>
+                <p>Please fill all the required details correctly!</p>
+            </fieldset>
+            <br>
+
+            <form id="RegistrationForm">
+
+                <section id="Sec1">
+                    <fieldset>
+                        <legend>Personal Details</legend>
+
+                        <div class="inputframe">
+                            👤 <input required   type="text" placeholder="Please Enter your Name Here" name="" id="user_name">
+                        </div><br>
+
+                        <div class="inputframe">
+                            ✉️ <input required   type="email" placeholder="Enter your email address. Example: you@yourcompany.ext" name="" id="user_email">
+                        </div><br>
+
+                        <div class="inputframe">
+                            📞 <input required   type="tel" placeholder="Enter your phone number (+91)" name="" id="user_phone">
+                        </div><br>
+
+                        <div class="inputframe">
+                            🧑‍🤝‍🧑 Gender 
+                            <input required   type="radio" name="inGender" style="max-width: 5%;" value="M">Male
+                            <input required   type="radio" name="inGender" style="max-width: 5%;" value="F">Female
+                            <input required   type="radio" name="inGender" style="max-width: 5%;" value="O">Other
+                        </div><br>
+
+                        <div class="inputframe">
+                            📅 Date of Birth <input required   style="width: 30%; float: right;" type="date" placeholder="Enter your date of birth" name="" id="u_DOB">
+                        </div>
+                        
+
+                    </fieldset>
+                </section>
+
+                <section id="Sec2" hidden>
+                    <fieldset>
+                        <legend>Academic Details</legend>
+                        <div class="inputframe">
+                            💻 Department &nbsp;&nbsp;
+                            <select id="sel_department">
+                                <option>Please Select</option>
+                                <option value="CSE">Computer Science & Engineering</option>
+                                <option value="AIDS">Artificial Intelligence & Data Science</option>
+                                <option value="AIML">Artificial Intelligence & Machine Learning</option>
+                                <option value="Cyber">Cyber Security</option>
+                            </select>
+                        </div><br>
+
+                        <div class="inputframe">
+                            📚 Year of study &nbsp;&nbsp;
+                            <select id="sel_yos">
+                                <option>Please Select</option>
+                                <option value="FirstYear">FY</option>
+                                <option value="SecondYear">SY</option>
+                                <option value="ThirdYear">TY</option>
+                                <option value="LastYear">LY</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                </section>
+
+                <section id="Sec3" hidden>
+                    <fieldset>
+                        <legend>Club Prefrences</legend>
+
+                        <div class="inputframe">
+                            🎉 Select Club &nbsp;&nbsp;
+
+                            <select name="" id="club_selection">
+                                <option value="NULL">Please select</option>
+                                <option value="CodingClub">Coding Club</option>
+                                <option value="RoboClub">Robotics Club</option>
+                                <option value="ArtsClub">Arts & Creative Club</option>
+                            </select>
+
+                        </div><br>
+
+                        <div class="inputframe">
+                            🌐 Areas of Interest <br><br>
+                            <input required   type="checkbox" style="width: 4%;" name="" id="TechnicalRole">Technical Role <br>
+                            <input required   type="checkbox" style="width: 4%;" name="" id="MGMTRole">Management / Lead Role <br>
+                            <input required   type="checkbox" style="width: 4%;" name="" id="CDRole">Creative / Designing Role
+                        </div>
+                        <br>
+
+                        <div class="inputframe">
+                            ❔Please tell us your reason to join the club <br><br>
+                            <textarea name="" id="joining_reason" placeholder="Enter your reason here"></textarea>
+                        </div><br>
+
+                        <div class="inputframe">
+                            📁 File Upload <br>
+                            <p>Please upload your passport size photo</p>
+
+                            <input required   type="file" class="fileupload-sec" accept=".png, .jpg, .jpeg, .bmp">
+
+                        </div>
+                    </fieldset>
+                </section>
+
+                <section id="Sec4" hidden>
+                    <fieldset>
+                        <legend>Terms & Conditions</legend>
+
+                        <center>
+                            <h3>Terms & Conditions</h3>
+                            <hr>
+                        </center>
+
+                        <p style="overflow-y: scroll;">
+
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br>
+                        Lorem Ipsum has been the industry's standard dummy text ever since <br>
+                        1966, when designers at Letraset and James Mosley, the librarian <br>
+                        at St Bride Printing Library in London, took a 1914 Cicero translation <br>
+                        and scrambled it to make dummy text for Letraset's Body Type sheets. It <br>
+                        has survived not only many decades, but also the leap into electronic <br>
+                        typesetting, remaining essentially unchanged. It was popularised thanks <br>
+                        to these sheets and more recently with desktop publishing software like <br>
+                        Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum. <br>
+
+                        </p>
+
+                        <br>
+
+                        <input required   type="checkbox" name="" id="tcagreebox" style="width: 2%;">I agree to the Club's terms & Conditions
+
+
+                    </fieldset>
+                </section>
+
+                <br>
+
+                <button class="togglebtn" style="float: right;" id="SubmitBtn" type="submit" hidden>
+                    Submit
+                </button>
+
+                <button class="togglebtn" style="float: right;" id="NextSecBtn">
+                    Next Section
+                </button>
+
+                <button class="togglebtn" id="PrevSecBtn">
+                    Previous Section
+                </button>
+
+            </form>
+
+        </div>
+
+</body>
+<script src="formscript.js"></script>
+<script src="appscript.js"></script>
+</html>

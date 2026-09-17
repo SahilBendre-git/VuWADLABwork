@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            if(screen.width < 780) {
+                document.write('This page cannot be viewed on such small screens. Sorry')
+            }
+        }
+    </script>
+    <header>
+        <nav class="widescr-navbar">
+            <div class="navigation-items">
+                <b>
+                    <a href="index.html" class="navigation-element">Home</a>
+                    &nbsp;&nbsp;
+                    <a href="index.html/#Club Reg Form" class="navigation-element">Registration Form</a>
+                    &nbsp;&nbsp;
+                    <a href="inbox.html" class="navigation-element">Registration Responses</a>
+                    &nbsp;&nbsp;
+                </b>
+            </div>
+        </nav>
+
+        <h2 class="web-title">
+            Club Registration - Sample Website
+        </h2>
+    </header>
+
+
+    <center>
+        <h2>Club Inbox</h2>
+    </center>
+    
+    <style>
+        table, tr{
+            border: 1px solid;
+            border-collapse: collapse;
+            padding: 18px;
+            width: 200%;
+        }
+    </style>
+
+    <div style="overflow-x: scroll; width: 80%; margin: 0 auto; border: 2px solid;" id="entryboxx">
+        <table border="1" id="EntryTable">
+        <tr>
+            <th>Sr. no</th>
+            <th>Request Id</th>
+            <th>Name of Applicant</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Department</th>
+            <th>Year of Study</th>
+            <th>Selected Club</th>
+            <th>Interested in</th>
+            <th>Reason for joining</th>
+        </tr>
+        </table>
+    </div>
+
+    
+
+</body>
+<script src="inboxscript.js"></script>
+</html>

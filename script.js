@@ -1,5 +1,49 @@
+let active_id =  ""
+
 window.onload = function() 
 {
+    filterProjects('WADLP')
+}
+
+function filterProjects(exp) {
+    const selectedType = document.getElementById('select-project-type').value;
+    const LabProjHolder = document.getElementById('projects-holder');
+    const ExtraProjHolder = document.getElementById('extra-projects-holder');
+    const classPracProjHolder = document.getElementById('class-projects-holder');
+
+    if(exp == active_id) {
+        return
+    }
+    else active_id = exp
+
+    //Hide all
+    LabProjHolder.style.display = 'none';
+    classPracProjHolder.style.display = 'none';
+    ExtraProjHolder.style.display = 'none';
+
+
+    switch(exp) {
+        case 'WADLP':
+            LabProjHolder.style.display = 'block';
+            renderLabProjects()
+            break;
+        case 'WADCP':
+            classPracProjHolder.style.display = 'block';
+            renderClassProjects();
+            break;
+        case 'WADEP':
+            ExtraProjHolder.style.display = 'block';
+            renderExtraProjects();
+            break;
+        default:
+            alert('Please select a valid project type.');
+    }
+
+
+
+}   
+
+function renderLabProjects() {
     let k = 0;
     for(X in projects) k++; //Count no of registered projects
     
@@ -9,7 +53,8 @@ window.onload = function()
 
         hdr.innerHTML +=
 
-        `            
+        `
+            <br><br>
             <div class="pcard" id="VU_WADLAB_${k}">
                 <i>
                     ${projects[X].DOC} (Lab ${k--})
@@ -33,54 +78,59 @@ window.onload = function()
 
             </div>
 
-            <br><br>
         
         `
     }
 }
 
-function filterProjects(exp) {
-    const selectedType = document.getElementById('select-project-type').value;
-    const LabProjHolder = document.getElementById('projects-holder');
-    const classPracProjHolder = document.getElementById('class-projects-holder');
+function renderExtraProjects() {
 
-    //Hide all
-    LabProjHolder.style.display = 'none';
-    classPracProjHolder.style.display = 'none';
+    const extraProjHolder = document.getElementById('extra-projects-holder');
+    extraProjHolder.innerHTML = ''
 
-    switch(exp) {
-        case 'WADLP':
-            LabProjHolder.style.display = 'block';
-            break;
-        case 'WADCP':
-            classPracProjHolder.style.display = 'block';
-            renderClassProjects();
-            break;
-        default:
-            alert('Please select a valid project type.');
+    let k = 0;
+
+    for(X in extra_projects) k++;
+
+    for(X in extra_projects) {
+        extraProjHolder.innerHTML += 
+        `
+            <br><br>
+            <div class="pcard">
+                <i>
+                    ${extra_projects[X].Date_Of_Issue}
+                </i>
+                <h3>
+                    ${extra_projects[X].title}
+                </h3>
+
+                <hr>
+
+                <div class="notes" style="display: none; float: right; width: 10%; cursor: pointer;">
+                    📝 Notes
+                </div>
+
+                <p style="width: 70%;">
+                    <b>Description:- </b>
+                    <i>
+                        ${extra_projects[X].description}
+                    </i>
+                </p>
+
+                <button class="open-button" onclick="window.location.href = '${extra_projects[X].landing_page_path}'" target="blank">Open Project</button>
+
+            </div>
+        `
+
     }
-
-    /*
-
-    if (selectedType === 'WADLP') {
-        LabProjHolder.style.display = 'block';
-    }
-    else if (selectedType === 'WADCP') {
-        classPracProjHolder.style.display = 'block';
-        renderClassProjects();
-    }
-    else {
-        alert('Please select a valid project type.');
-    }
-        */
-
-}   
+}
 
 function renderClassProjects() {
 
     //alert('Rendering Class Projects...');
 
     const classPracProjHolder = document.getElementById('class-projects-holder');
+    classPracProjHolder.innerHTML = ''
 
     let k = 0;
     for(X in class_projects) k++; //Count no of registered projects
@@ -89,6 +139,7 @@ function renderClassProjects() {
 
     classPracProjHolder.innerHTML += 
     `
+        <br><br>
         <div class="pcard" id="VU_WADLAB_${k}">
                 <i>
                     ${class_projects[X].DOC} (Lec. Practical ${k--})
@@ -111,8 +162,6 @@ function renderClassProjects() {
                 </a>
 
             </div>
-
-            <br><br>
     `
 
     }

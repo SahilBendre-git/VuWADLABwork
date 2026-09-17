@@ -25,12 +25,15 @@
             <h2>My Projects</h2>
         </center>
 
-        <nav>
+        <nav style="overflow-x: scroll; width: 100%; height: 5%;">
             <button id="WLP" class="selected" onclick="change('WADLP')">
                 WAD Lab Practical
             </button>
             <button id="WCP" class="unselected" onclick="change('WADCP')">
                 WAD Class Practical
+            </button>
+            <button id="WEP" class="unselected" onclick="change('WADEP')">
+                Extra Projects
             </button>
         </nav>
 
@@ -38,14 +41,49 @@
             function change(buttonId) {
                 const WLPButton = document.getElementById('WLP');
                 const WCPButton = document.getElementById('WCP');
+                const WEPButton = document.getElementById('WEP');
 
-                if (buttonId === 'WADLP') {
+                WLPButton.className = 'unselected';
+                WEPButton.className = 'unselected';
+                WCPButton.className = 'unselected';
+
+                switch(buttonId)
+                {
+                    case 'WADLP':
                     WLPButton.className = 'selected';
+                    break;
+
+                    case 'WADEP':
+                    WEPButton.className = 'selected';
+                    break;
+
+                    case 'WADCP':
+                    WCPButton.className = 'selected';
+                    break;
+
+                    default:
+                        alert('Error Occured')
+
+                }
+                
+                /*
+
+                if(buttonId === 'WADLP') {
+                    WLPButton.className = 'selected';
+                    WEPButton.className = 'unselected';
                     WCPButton.className = 'unselected';
-                } else {
+                } else if(buttonId === 'WADEP') {
+                    WLPButton.className = 'unselected';
+                    WCPButton.className = 'unselected';
+                    WEPButton.className = 'selected';
+                } else
+                {
                     WLPButton.className = 'unselected';
                     WCPButton.className = 'selected';
+                    WEPButton.className = 'unselected';
                 }
+
+                */
 
                 filterProjects(buttonId);
 
@@ -57,42 +95,14 @@
         <select style="display: none;" name="typeselector" id="select-project-type" onchange="filterProjects()">
             <option value="WADLP">WAD Lab Practical</option>
             <option value="WADCP">WAD Class Practical</option>
+            <option value="WADEP">WAD Extra Projects</option>
         </select>
 
-        <div class="projects-holder" id="class-projects-holder" style="display: none;">
+        <div class="projects-holder" id="class-projects-holder" style="display: none;"></div>
 
-            <br><br>
+        <div class="projects-holder" id="projects-holder" style="display: none;"></div>
 
-
-        </div>
-
-        <div class="projects-holder" id="projects-holder">
-            
-           <div class="pcard" style="display: none;">
-                <i>
-                    DD/MM/YYYY
-                </i>
-                <h3>
-                    Project Title
-                </h3>
-
-                <hr>
-
-                <p>
-                    <b>Description:- </b>
-                    <i>
-                        Project Description Here
-                    </i>
-                </p>
-
-                <button class="open-button">Open Project</button>
-
-            </div>
-
-
-            <br><br>
-
-        </div>
+        <div class="projects-holder" id="extra-projects-holder" style="display: none;"></div>
 
     </section>
 
@@ -111,7 +121,6 @@
         </p>
 
         <br>
-
         <i>Write a Feedback to <a href="mailto:saben9099@gmail.com">saben9099@gmail.com</a></i>
 
     </section>
@@ -120,5 +129,6 @@
 </body>
 <script src="projects.js"></script>
 <script src="class-projects.js"></script>
+<script src="extra-projects.js"></script>
 <script src="script.js"></script>
 </html>

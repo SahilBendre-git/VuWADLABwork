@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            if(screen.width < 780) {
+                document.write('This page cannot be viewed on such small screens. Sorry')
+            }
+        }
+        function redirect() {window.location.href='RegForm.html'}
+    </script>
+    <header>
+        <nav class="widescr-navbar">
+            <div class="navigation-items">
+                <b>
+                    <a href="#" class="navigation-element">Home</a>
+                    &nbsp;&nbsp;
+                    <a href="#Club Reg Form" class="navigation-element">Registration Form</a>
+                    &nbsp;&nbsp;
+                    <a href="inbox.html" class="navigation-element">Registration Responses</a>
+                    &nbsp;&nbsp;
+                </b>
+            </div>
+        </nav>
+
+        <a href="../../" style="color: white;">Back to Parent</a>
+
+        <br><br>
+
+        <h2 class="web-title">
+            Club Registration - Sample Website
+        </h2>
+    </header>
+
+    <section id="About-Club" class="#Club-Welcome-Card">
+        <div class="intro-card">
+            <div class="layover">
+                <!--Main Welcoming Content Here-->
+                <div class="joinbtn-hdr">
+                    <h1>
+                        Why Should You Join?
+                    </h1>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, <br>
+                        consectetur adipiscing elit. <br>
+                        Sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. <br><br> Ut enim ad 
+                        minim veniam, quis nostrud exercitation ullamco <br> 
+                        laboris nisi ut aliquip ex ea commodo consequat. <br><br>
+                    </p>
+
+                    <button class="join-button-homepage" onclick="redirect()">
+                        <b>
+                            Join Club
+                        </b>
+                    </button>
+                </div>
+
+                <div class="intro-div">
+                    <h1>
+                        Welcome to the <br>
+                        Catalyst Crew Club!
+                    </h1>
+                    
+                    <hr>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, <br>
+                        consectetur adipiscing elit. <br>
+                        Sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. <br><br> Ut enim ad 
+                        minim veniam, quis nostrud exercitation ullamco <br> 
+                        laboris nisi ut aliquip ex ea commodo consequat. <br><br>
+                    </p>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, <br>
+                        consectetur adipiscing elit. <br>
+                        Sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. <br><br> Ut enim ad 
+                        minim veniam, quis nostrud exercitation ullamco <br> 
+                        laboris nisi ut aliquip ex ea commodo consequat. <br><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="Club Reg Form" class="Registration-Form-Linker">
+        <div class="regform-linker">
+            <div class="layover-inv">
+                <div class="Clubmembers-img"></div>
+
+                <div style="width: 40%; padding: 20px; color: white;">
+                    <h2>
+                        <u>
+                            Club Registration Form
+                        </u>
+                        
+                    </h2>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, <br>
+                        consectetur adipiscing elit. <br>
+                        Sed do eiusmod tempor incididunt ut 
+                        labore et dolore magna aliqua. <br><br> Ut enim ad 
+                        minim veniam, quis nostrud exercitation ullamco <br> 
+                        laboris nisi ut aliquip ex ea commodo consequat. <br><br>
+                    </p>
+
+                    <h3>Click the below button to join the club!</h3>
+
+                    <br>
+
+                    <button class="join-button-homepage" onclick="redirect()">
+                        Join Club
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div style="padding: 15px;">
+            <h2>
+                Club Registration - Inbox
+            </h2>
+            <hr>
+            <p>
+                Click <a href="">here</a> to view the inbox.
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>
