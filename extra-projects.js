@@ -1,5 +1,7 @@
 const extra_projects = {
 
+    //Add new projects below this comment
+
     Project1: {
         title: "Club Sample Website",
         Date_Of_Issue: "17-09-2026",
