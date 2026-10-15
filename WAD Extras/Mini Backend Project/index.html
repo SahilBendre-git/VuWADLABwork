@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Dashboard</h1>
+        <p>Frontend connected to our Node.js backend</p>
+    </header>
+
+    <main>
+
+        <!-- GET -->
+        <section class="card">
+            <h2>Students</h2>
+
+            <button onclick="loadStudents()">
+                Load Students
+            </button>
+
+            <p class="status" id="status"></p>
+
+            <div id="students"></div>
+        </section>
+
+
+        <!-- POST -->
+        <section class="card">
+
+            <p>
+                * The backend API Service is not configured so won't connect to the backend. <br>
+                When I host the server on render, it will work. <br><br>
+
+                When you click the above button, It will display the students list sent by my <br>
+                custom GET Api endpoint.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="appscript.js"></script>
+
+</body>
+</html>

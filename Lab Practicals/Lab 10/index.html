@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAD Lab Practical - 10</title>
+</head>
+<body>
+    <center>
+        <h2>WAD Lab Practical - 10</h2>
+    </center>
+
+    <p>
+        This page, contains a input box where you enter your name, and click <br>
+        greet button, it will wish you good morning / afternoon / evening based on the time of the day. <br>
+        It will also display the current date and time. 
+    </p>
+
+    <br>
+
+    <form id="greetInCForm">
+        <input type="text" placeholder="Enter your name" name="" id="">
+        <br><br>
+        <input type="button" value="Greet">
+    </form>
+
+</body>
+<script>
+    window.onload = function() {
+        const form = document.getElementById('greetInCForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            greetUser();
+        });
+    };
+
+    function greetUser() {
+        const nameInput = document.querySelector('input[type="text"]');
+        const name = nameInput.value.trim();
+        if (name === "") {
+            alert("Please enter your name.");
+            return;
+        }
+        
+
+        const currentTime = new Date();
+        const hours = currentTime.getHours();
+        let greeting;
+
+        if (hours < 12) {
+            greeting = "Good Morning";
+        } else if (hours < 18) {
+            greeting = "Good Afternoon";
+        } else {
+            greeting = "Good Evening";
+        }
+
+        const dateString = currentTime.toLocaleString();
+
+        // This line formats the current date and time in a readable string format
+        // It converts the date and time to a string using the local time zone and locale-specific formatting
+
+        alert(`${greeting}, ${name}! Current date and time: ${dateString}`);
+    }
+</script>
+
+<style>
+    body{
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+</style>
+
+</html>
