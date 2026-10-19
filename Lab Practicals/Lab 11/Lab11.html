@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      max-width: 400px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div style="float: right; height: 500px; width: 60%; overflow-y: scroll; scrollbar-color: blue; padding: 5px; border: 1px solid black;">
+      <table id="ParentforEntries">
+        
+      </table>
+
+      <script>
+        window.onload = async function() {
+           await loadData()
+        }
+
+        async function loadData() {
+          try{
+            await fetch('http://localhost:2001/api/getapi/getAllEntries')
+          .then(res => res.json())
+          .then(res => {
+          document.getElementById('ParentforEntries').innerHTML = `
+            <tr>
+              <th>Sr. No</th>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th>Email</th>
+              <th>Date of Birth</th>
+              <th>Action Column</th>
+            </tr>`
+            const data = JSON.parse(res)
+            let k = 0
+            data.forEach(user => {
+              k++
+              document.getElementById('ParentforEntries').innerHTML +=
+              `
+                <tr id="UserEntry${k}">
+                  <td>${k}</td>
+                  <td>${user.fullname}</td>
+                  <td>${user.phone}</td>
+                  <td>${user.email}</td>
+                  <td>${user.DOB}</td>
+                  <td>
+                    <button onclick="delprof('${k}')">Delete Entry</button>  
+                  </td>
+                </tr>
+              `
+            })
+            if(k==0) document.getElementById('ParentforEntries').innerText = 'No User found'
+          })
+        }
+       catch(e) {
+        document.getElementById('ParentforEntries').innerText = 'Cannot connect to backend!'
+        console.log(e)
+       }
+      }
+
+      async function delprof(i)
+      {
+          //if(!confirm("Are you sure want to delete the profile for user "+i)) return;
+          await fetch(`http://localhost:2001/api/deleteprofile?id=${i}`, {
+            method: "DELETE"
+          })
+          .then(res => res.json())
+          .then(res => {
+            document.getElementById(`UserEntry${i}`).remove();
+            console.log(res);
+          })
+
+      }
+      </script>
+      
+      <style>
+        table{
+          width: 100%;
+        }
+
+        th{
+          background-color: #007BFF;
+          color: white;
+          font-style: italic
+        }
+
+        table, tr, th, td{
+          border: 1px solid;
+          border-collapse: collapse;
+        }
+
+        th, td{
+          padding: 8px;
+        }
+
+      </style>
+  </div>
+  <h2>User Registration</h2>
+  <form id="regForm">
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob">
+
+    <label for="gender">Gender</label>
+    <select id="gender" name="gender">
+      <option value="">--Select--</option>
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+      <option value="O">Other</option>
+    </select>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+
+    <p id="errorbox">Please Reg</p>
+
+    <button type="submit">Register</button>
+  </form>
+
+</body>
+
+<script>
+    const form = document.getElementById('regForm')
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        //get form data
+
+        let flag = 1
+
+        const errormsg = document.getElementById('errorbox')
+
+        let fullname = document.getElementById('fullname');
+        let email    = document.getElementById('email');
+        let phone    = document.getElementById('phone');
+        let DOB      = document.getElementById('dob');
+        let gender   = document.getElementById('gender');
+        let password = document.getElementById('password');
+
+        const formData = {
+            fullname: document.getElementById('fullname').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            DOB: document.getElementById('dob').value,
+            gender: document.getElementById('gender').value,
+            password: document.getElementById('password').value
+        }     
+
+        await fetch("http://localhost:2001/api/postapi", {
+        method: "POST",
+        headers: {
+          "Content-Type":"application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+      })
+      loadData();
+    })
+    form.reset();
+</script>
+
+</html>
